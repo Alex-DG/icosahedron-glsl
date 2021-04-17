@@ -175,21 +175,6 @@ gui
   .step(1)
   .onFinishChange(generateIcosahedron)
 gui.add(parameters, 'wireframe').onChange(generateIcosahedron)
-// gui.add(mesh.position, 'y').min(-3).max(3).step(0.01).name('elevation')
-// gui.add(mesh, 'visible')
-// gui.add(material, 'wireframe')
-
-// gui.addColor(parameters, 'color').onChange(() => {
-//   material.color.set(parameters.color)
-// })
-
-// gui.add(parameters, 'spin')
-
-// gui.add(geometry.getAttribute('radius'), 'radius').onChange(() => {
-//   geometry.setAttribute('radius', parameters.radius)
-// })
-
-// gui.add(geometry.getAttribute('radius'), 'radius').min(1).max(10).step(1)
 
 /**
  * Animate
@@ -198,6 +183,12 @@ const clock = new THREE.Clock()
 
 const tick = () => {
   const elapsedTime = clock.getElapsedTime()
+
+  //   scene.rotation.x = elapsedTime * 0.1
+  //   scene.rotation.y = elapsedTime * 0.1
+
+  icosahedron.rotation.x = elapsedTime * 0.15
+  icosahedron.rotation.y = elapsedTime * 0.1
 
   // Update controls
   controls.update()
