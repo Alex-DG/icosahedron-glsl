@@ -147,11 +147,11 @@ controls.enableDamping = true
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
 })
-renderer.setPixelRatio(window.devicePixelRatio)
+
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.setSize(sizes.width, sizes.height)
-renderer.setClearColor(0xeeeeee, 1)
+renderer.setClearColor(0x111111, 1)
 renderer.outputEncoding = THREE.sRGBEncoding
-// renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 /**
  * Debug
@@ -187,8 +187,8 @@ const tick = () => {
   //   scene.rotation.x = elapsedTime * 0.1
   //   scene.rotation.y = elapsedTime * 0.1
 
-  icosahedron.rotation.x = elapsedTime * 0.15
-  icosahedron.rotation.y = elapsedTime * 0.1
+  icosahedron.rotation.x = elapsedTime * 0.05
+  icosahedron.rotation.y = elapsedTime * 0.06
 
   // Update controls
   controls.update()
