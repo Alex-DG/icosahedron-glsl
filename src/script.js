@@ -49,6 +49,10 @@ const generateIcosahedron = () => {
   }
 
   geometry = new THREE.IcosahedronGeometry(parameters.radius, parameters.detail)
+
+  let t = new THREE.TextureLoader().load('/images/dune.jpg')
+  t.wrapS = t.wrapT = THREE.MirroredRepeatWrapping
+
   material = new THREE.ShaderMaterial({
     extensions: {
       derivatives: '#extension GL_OES_standard_derivatives : enable',
@@ -57,7 +61,7 @@ const generateIcosahedron = () => {
     uniforms: {
       time: { type: 'f', value: 0 },
       landscape: {
-        value: new THREE.TextureLoader().load('/assets/images/dune2.jpg'),
+        value: t,
       },
       resolution: { type: 'v4', value: new THREE.Vector4() },
       uvRate1: {
