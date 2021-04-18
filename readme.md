@@ -2,7 +2,8 @@
 
 Original website: https://rogierdeboeve.com/
 
-Thanks to [Yuri Artyukh](http://twitter.com/akella) for the live coding session and to [Bruno Simon](https://threejs-journey.xyz/) for the Three.js starter project.
+Thanks to [Yuri Artyukh](http://twitter.com/akella) for the live coding session and his "Today it will be an easy one!".
+Thanks to [Bruno Simon](https://threejs-journey.xyz/) for the Three.js starter project.
 
 [Three.js](https://threejs.org/) is Amazing! 🚀
 
