@@ -26,10 +26,10 @@ void main()	{
 
 	vec2 uv = uvv * gl_FragCoord.xy/vec2(1000.);
 
-	vec3 refracted = refract(eyeVector,normal,1./3.);
+	vec3 refracted = refract(eyeVector, normal, 1./3.);
 	uv += 0.2*refracted.xy;
 
-	vec4 t = texture2D(landscape,uv);
+	vec4 t = texture2D(landscape, uv);
 
 	gl_FragColor = t;
 

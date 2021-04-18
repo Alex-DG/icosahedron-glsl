@@ -179,21 +179,13 @@ gui
   .onFinishChange(generateIcosahedron)
 gui.add(parameters, 'wireframe').onChange(generateIcosahedron)
 
-// const controller = folder.add({ color: 'red' }, 'color', ['red', 'purple'])
-// controller.onFinishChange(v => console.log('New color:', v))
-
-// 'english', 'spanish', 'french'
 gui
   .add(parameters, 'images', [
     'dune-du-pilat',
     'bordeaux',
     'okinawa-sea',
-    'vigne',
-    'geisha',
-    'totoro',
-    'your-name',
     'sakura',
-    'tokyo',
+    'geisha',
   ])
   .onFinishChange(generateIcosahedron)
 
@@ -208,8 +200,8 @@ const tick = () => {
   //   scene.rotation.x = elapsedTime * 0.1
   //   scene.rotation.y = elapsedTime * 0.1
 
-  icosahedron.rotation.x = elapsedTime * 0.05
-  icosahedron.rotation.y = elapsedTime * 0.06
+  icosahedron.rotation.x = elapsedTime * 0.04
+  icosahedron.rotation.y = elapsedTime * 0.04
 
   // Update controls
   controls.update()
