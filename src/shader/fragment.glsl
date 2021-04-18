@@ -18,7 +18,7 @@ void main()	{
 
 	float diffuse = dot(normal,vec3(1.));
 
-	vec2 random = hash22(vec2(floor(diffuse*12.)));
+	vec2 random = hash22(vec2(floor(diffuse*10.)));
 	vec2 uvv = vec2(
 		sign(random.x - 0.5) * 1. + (random.x - 0.5) * .6,
 		sign(random.y - 0.5) * 1. + (random.y - 0.5) * .6

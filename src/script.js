@@ -24,6 +24,7 @@ const parameters = {}
 parameters.radius = 1
 parameters.detail = 1
 parameters.wireframe = false
+parameters.images = 'dune-du-pilat'
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -50,7 +51,8 @@ const generateIcosahedron = () => {
 
   geometry = new THREE.IcosahedronGeometry(parameters.radius, parameters.detail)
 
-  let t = new THREE.TextureLoader().load('/images/dune.jpg')
+  console.log('generate', parameters.images)
+  let t = new THREE.TextureLoader().load(`images/${parameters.images}.jpg`)
   t.wrapS = t.wrapT = THREE.MirroredRepeatWrapping
 
   material = new THREE.ShaderMaterial({
@@ -146,11 +148,12 @@ controls.enableDamping = true
  */
 const renderer = new THREE.WebGLRenderer({
   canvas: canvas,
+  alpha: true,
 })
 
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 renderer.setSize(sizes.width, sizes.height)
-renderer.setClearColor(0x111111, 1)
+// renderer.setClearColor(0x111111, 1)
 renderer.outputEncoding = THREE.sRGBEncoding
 
 /**
@@ -175,6 +178,24 @@ gui
   .step(1)
   .onFinishChange(generateIcosahedron)
 gui.add(parameters, 'wireframe').onChange(generateIcosahedron)
+
+// const controller = folder.add({ color: 'red' }, 'color', ['red', 'purple'])
+// controller.onFinishChange(v => console.log('New color:', v))
+
+// 'english', 'spanish', 'french'
+gui
+  .add(parameters, 'images', [
+    'dune-du-pilat',
+    'bordeaux',
+    'okinawa-sea',
+    'vigne',
+    'geisha',
+    'totoro',
+    'your-name',
+    'sakura',
+    'tokyo',
+  ])
+  .onFinishChange(generateIcosahedron)
 
 /**
  * Animate
