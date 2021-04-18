@@ -183,6 +183,7 @@ gui
   .add(parameters, 'images', [
     'dune-du-pilat',
     'bordeaux',
+    'sand',
     'okinawa-sea',
     'sakura',
     'geisha',
