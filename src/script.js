@@ -284,7 +284,6 @@ gui
     'okinawa-sea',
     'sakura',
     'geisha',
-    'gearedapp-office',
   ])
   .onFinishChange(generateIcosahedron)
 
